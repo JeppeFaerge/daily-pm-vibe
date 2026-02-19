@@ -1,1 +1,51 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projektleder-assistent</title>
+  <meta name="description" content="En simpel, rolig projektleder-assistent — indtast dagens fokus og få 3 prioriterede opgaver + 1 kort ledelsesråd." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <header>
+      <h1>Projektleder-assistent</h1>
+      <p class="lead">Skriv dagens fokus — jeg giver 3 prioriterede opgaver og ét kort ledelsesråd.</p>
+    </header>
 
+    <section class="input-area" aria-labelledby="focus-label">
+      <label id="focus-label" for="focus">Dagens fokus</label>
+      <textarea id="focus" placeholder="F.eks. 'Release v1.2, QA, koordinering med design'"></textarea>
+      <div class="controls">
+        <button id="generate">Generér planen</button>
+        <button id="clear" class="secondary">Ryd</button>
+      </div>
+    </section>
+
+    <section class="output-area" aria-live="polite" aria-atomic="true">
+      <div id="result" class="card hidden">
+        <h2>Prioriterede opgaver</h2>
+        <ol id="tasks"></ol>
+
+        <h3>Ledelsesråd</h3>
+        <p id="advice" class="advice"></p>
+
+        <footer class="meta">
+          <small id="metaText"></small>
+        </footer>
+      </div>
+
+      <div id="hint" class="hint">
+        Tip: skriv kort + konkrete ting (f.eks. "bugfix, release, design sync"). Hvis du lader feltet stå tomt får du generiske forslag.
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <small>Bygget til rolig, erfaren projektledelse • Ingen data sendes eksternt</small>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
